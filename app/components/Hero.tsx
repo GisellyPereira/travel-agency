@@ -18,14 +18,14 @@ export function Hero() {
         <Image src="/Decore.svg" alt="" fill priority className="object-contain object-right-top" />
       </div>
 
-        <Container className="grid min-h-[640px] items-center gap-6 md:[grid-template-columns:0.9fr_1.1fr] lg:[grid-template-columns:0.8fr_1.2fr] lg:gap-10">
+        <Container className="grid min-h-[560px] items-center gap-6 pt-1 md:min-h-[640px] md:[grid-template-columns:0.9fr_1.1fr] lg:[grid-template-columns:0.8fr_1.2fr] lg:gap-10">
         <div className="relative z-20">
           <SectionEyebrow className="mb-3">BEST DESTINATIONS AROUND THE WORLD</SectionEyebrow>
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="font-volkhov text-balance text-5xl font-extrabold leading-[1.02] tracking-tight text-[#14183E] sm:text-[72px]"
+            className="font-volkhov text-balance text-[clamp(38px,6vw,72px)] font-extrabold leading-[1.02] tracking-tight text-[#14183E]"
           >
             Travel, enjoy <span className="relative inline-block">
               <span className="relative z-10">and live a new</span>
@@ -58,28 +58,24 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.98, y: 8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-          className="relative hidden aspect-[4/5] w-full md:block"
+          className="relative hidden aspect-[4/5] w-full md:max-w-[560px] lg:max-w-[620px] xl:max-w-[660px] md:justify-self-end md:block"
         >
           <Image
             src="/Image-woman.svg"
             alt="Viajante sorrindo com mala"
             fill
             priority
-            sizes="(min-width: 1440px) 700px, (min-width: 1024px) 560px, 100vw"
-            className="object-contain"
+            sizes="(min-width: 1440px) 660px, (min-width: 1024px) 560px, 100vw"
+            className="object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.15)]"
           />
         </motion.div>
         </Container>
 
       {/* Imagem no mobile (abaixo do texto) */}
-      <div className="relative mx-auto mt-10 aspect-[4/5] w-full max-w-[560px] md:hidden">
+      <div className="relative mx-auto mt-6 aspect-[4/5] w-full max-w-[420px] md:hidden">
         <Image src="/Image-woman.svg" alt="Viajante sorrindo com mala" fill priority sizes="92vw" className="object-contain" />
       </div>
 
-      {/* Sublinhado vermelho sobre parte do título */}
-      <div aria-hidden className="pointer-events-none absolute left-[min(6vw,72px)] top-[210px] hidden h-4 w-64 sm:block md:left-[8%]">
-        <Image src="/Rectangle 14.svg" alt="" fill className="object-contain" />
-      </div>
     </section>
   );
 }

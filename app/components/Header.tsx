@@ -16,19 +16,19 @@ export function Header() {
           <Image src="/Logo.svg" alt="Logo" width={114} height={32} />
         </Link>
 
-        <nav className="font-volkhov hidden items-center gap-10 text-[15px] text-zinc-700 md:flex">
-          <Link href="#destinations" className="hover:text-zinc-900">Destinations</Link>
-          <Link href="#hotels" className="hover:text-zinc-900">Hotels</Link>
-          <Link href="#flights" className="hover:text-zinc-900">Flights</Link>
-          <Link href="#bookings" className="hover:text-zinc-900">Bookings</Link>
-          <Link href="#login" className="hover:text-zinc-900">Login</Link>
+        <nav className="font-volkhov hidden items-center gap-10 text-[15px] text-zinc-700 xl:flex">
+          <Link href="#destinations" className="transition-colors hover:text-zinc-900">Destinations</Link>
+          <Link href="#hotels" className="transition-colors hover:text-zinc-900">Hotels</Link>
+          <Link href="#flights" className="transition-colors hover:text-zinc-900">Flights</Link>
+          <Link href="#bookings" className="transition-colors hover:text-zinc-900">Bookings</Link>
+          <Link href="#login" className="transition-colors hover:text-zinc-900">Login</Link>
           <Button size="sm" variant="outline" className="h-9 rounded-xl px-5">Sign up</Button>
           <button className="text-zinc-700">EN ▾</button>
         </nav>
 
         <button
           aria-label="Abrir menu"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-zinc-200 bg-white/70 backdrop-blur md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-zinc-200 bg-white/70 backdrop-blur xl:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -38,7 +38,7 @@ export function Header() {
       </Container>
 
       {open && (
-        <div className="border-t border-zinc-200/60 bg-white/90 backdrop-blur md:hidden">
+        <div className="border-t border-zinc-200/60 bg-white/90 backdrop-blur xl:hidden">
           <Container className="font-volkhov flex flex-col gap-3 py-4 text-sm">
             <Link href="#destinations" onClick={() => setOpen(false)}>Destinations</Link>
             <Link href="#hotels" onClick={() => setOpen(false)}>Hotels</Link>
