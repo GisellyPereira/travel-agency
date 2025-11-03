@@ -28,30 +28,29 @@ export function Header() {
 
         <button
           aria-label="Abrir menu"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-zinc-200 bg-white/70 backdrop-blur xl:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-zinc-300 bg-white shadow-sm hover:bg-zinc-50 xl:hidden"
           onClick={() => setOpen((v) => !v)}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="1.5" />
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden className="text-zinc-900">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" />
           </svg>
         </button>
       </Container>
 
       {open && (
-        <div className="border-t border-zinc-200/60 bg-white/90 backdrop-blur xl:hidden">
-          <Container className="font-volkhov flex flex-col gap-3 py-4 text-sm">
-            <Link href="#destinations" onClick={() => setOpen(false)}>Destinations</Link>
-            <Link href="#hotels" onClick={() => setOpen(false)}>Hotels</Link>
-            <Link href="#flights" onClick={() => setOpen(false)}>Flights</Link>
-            <Link href="#bookings" onClick={() => setOpen(false)}>Bookings</Link>
-            <Link href="#login" onClick={() => setOpen(false)}>Login</Link>
-            <Button size="sm" variant="outline" className="mt-2 w-full rounded-xl">Sign up</Button>
-            <button className="text-left">EN ▾</button>
+        <div className="border-t border-zinc-200 bg-white shadow-lg xl:hidden">
+          <Container className="font-volkhov flex flex-col gap-4 py-6">
+            <Link href="#destinations" onClick={() => setOpen(false)} className="text-[15px] font-medium text-zinc-900 hover:text-[#F1A501] transition-colors">Destinations</Link>
+            <Link href="#hotels" onClick={() => setOpen(false)} className="text-[15px] font-medium text-zinc-900 hover:text-[#F1A501] transition-colors">Hotels</Link>
+            <Link href="#flights" onClick={() => setOpen(false)} className="text-[15px] font-medium text-zinc-900 hover:text-[#F1A501] transition-colors">Flights</Link>
+            <Link href="#bookings" onClick={() => setOpen(false)} className="text-[15px] font-medium text-zinc-900 hover:text-[#F1A501] transition-colors">Bookings</Link>
+            <Link href="#login" onClick={() => setOpen(false)} className="text-[15px] font-medium text-zinc-900 hover:text-[#F1A501] transition-colors">Login</Link>
+            <Button size="sm" variant="outline" className="mt-2 w-full rounded-xl border-zinc-300 text-zinc-900 hover:bg-zinc-50">Sign up</Button>
+            <button className="text-left text-[15px] font-medium text-zinc-900 hover:text-[#F1A501] transition-colors">EN ▾</button>
           </Container>
         </div>
       )}
     </header>
   );
 }
-
 
