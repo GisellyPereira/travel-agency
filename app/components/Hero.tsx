@@ -10,7 +10,7 @@ import { PlayDemo } from "../components/PlayDemo";
 
 export function Hero() {
   return (
-    <section className="relative overflow-visible bg-white pb-0 pt-0 sm:pb-0 sm:pt-0">
+    <section className="relative overflow-x-hidden bg-white pb-0 pt-0 sm:pb-0 sm:pt-0">
       {/* Menu sobre a Hero */}
       <Header />
       {/* Decoração amarela à direita (aumentada) */}
@@ -40,8 +40,42 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="mt-5 max-w-xl text-pretty text-[16px] leading-7 text-zinc-600"
           >
-            Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.
+            Discover amazing places around the world. Plan your dream trip with confidence, get the best prices guaranteed, and enjoy 24/7 support from real humans.
           </motion.p>
+
+          {/* Trust Metrics */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            className="mt-6 flex flex-wrap items-center gap-6 text-[13px]"
+          >
+            <div className="flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-600">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+              </div>
+              <span className="font-medium text-zinc-700"><strong className="text-[#14183E]">250k+</strong> trips booked</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/10 text-amber-600">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              </div>
+              <span className="font-medium text-zinc-700"><strong className="text-[#14183E]">4.9/5</strong> rating</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="11" width="18" height="10" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <span className="font-medium text-zinc-700"><strong className="text-[#14183E]">100%</strong> secure</span>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -49,7 +83,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="mt-8 flex items-center gap-6"
           >
-            <Button className="h-12 rounded-xl bg-[#F1A501] px-6 text-white shadow-lg shadow-[#F1A501]/30 hover:bg-[#d99601]">Find out more</Button>
+            <Button className="h-12 rounded-xl bg-[#F1A501] px-6 text-white shadow-lg shadow-[#F1A501]/30 hover:bg-[#d99601] transition-all hover:scale-105">Find out more</Button>
             <PlayDemo />
           </motion.div>
         </div>
@@ -79,5 +113,6 @@ export function Hero() {
     </section>
   );
 }
+
 
 

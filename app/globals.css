@@ -29,3 +29,23 @@ body {
 .font-volkhov {
   font-family: var(--font-volkhov), Georgia, "Times New Roman", serif;
 }
+
+/* Logo Loop Animation */
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-logo-scroll {
+  animation: logo-scroll 40s linear infinite;
+  width: max-content;
+}
+
+.animate-logo-scroll:hover {
+  animation-play-state: paused;
+}
+
