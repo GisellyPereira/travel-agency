@@ -1,0 +1,220 @@
+.container {
+  composes: container from "./primitives.module.css";
+}
+.photo {
+  composes: photo from "./primitives.module.css";
+}
+.button {
+  composes: button from "./primitives.module.css";
+}
+.buttonCoral {
+  composes: buttonCoral from "./primitives.module.css";
+}
+.buttonOutline {
+  composes: buttonOutline from "./primitives.module.css";
+}
+.buttonSand {
+  composes: buttonSand from "./primitives.module.css";
+}
+.eyebrow {
+  composes: eyebrow from "./primitives.module.css";
+}
+.eyebrowLight {
+  composes: eyebrowLight from "./primitives.module.css";
+}
+.sectionHeading {
+  composes: sectionHeading from "./primitives.module.css";
+}
+.brand {
+  composes: brand from "./primitives.module.css";
+}
+.brandDot {
+  composes: brandDot from "./primitives.module.css";
+}
+.header {
+  position: sticky;
+  z-index: 40;
+  top: 0;
+  background: #fffefbf2;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #073b4510;
+}
+.headerInner {
+  height: 84px;
+  width: min(1360px, calc(100% - 88px));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.brandCaption {
+  max-width: 90px;
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+  font-size: 10px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.navigation > a {
+  position: relative;
+  padding-block: 12px;
+  transition: color 0.2s;
+}
+.navigation > a::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  bottom: 7px;
+  left: 0;
+  width: 100%;
+  background: var(--coral);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s;
+}
+.navigation > a:hover::after {
+  transform: scaleX(1);
+}
+.headerActions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.headerPlan {
+  min-height: 44px;
+  padding: 12px 20px;
+  font-size: 11px;
+  gap: 18px;
+}
+.saveHeader {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  color: var(--green);
+  cursor: pointer;
+}
+.saveHeader svg {
+  width: 20px;
+}
+.saveHeader > span {
+  position: absolute;
+  right: -4px;
+  top: 0;
+  background: var(--coral);
+  color: #fff;
+  border-radius: 20px;
+  min-width: 16px;
+  height: 16px;
+  font-size: 9px;
+  display: grid;
+  place-items: center;
+}
+.menuToggle,
+.mobilePlan {
+  display: none;
+}
+@media (max-width: 1180px) {
+  .headerInner {
+    width: calc(100% - 60px);
+    gap: 20px;
+  }
+  .brandCaption {
+    display: none;
+  }
+  .navigation {
+    gap: 25px;
+  }
+}
+@media (max-width: 900px) {
+  .headerInner {
+    height: 76px;
+    width: calc(100% - 48px);
+  }
+  .headerActions {
+    gap: 12px;
+  }
+  .menuToggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 0;
+    color: var(--green);
+    cursor: pointer;
+  }
+  .navigation {
+    display: none;
+  }
+  .navigationOpen {
+    display: flex;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    padding: 22px 28px 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 20px #073b4510;
+  }
+  .mobilePlan {
+    display: inline-flex;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .headerInner {
+    height: 70px;
+    width: calc(100% - 40px);
+  }
+  .headerPlan {
+    display: none;
+  }
+  .navigationOpen {
+    top: 69px;
+  }
+  .headerActions {
+    gap: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .navigation > a::after {
+    transition: none;
+  }
+}
+
+/* A navegação pertence à paisagem; ganha fundo quando a hero sai da tela. */
+.header { position:fixed; inset:0 0 auto; border-bottom:0; transition:background .25s,color .25s; }
+.headerInner { height:94px; width:calc(100% - 144px); max-width:1500px; }
+.overHero { background:transparent; backdrop-filter:none; color:white; }
+.overHero .logo > span,.overHero .logo svg { color:white; }
+.overHero .saveHeader,.overHero .menuToggle { color:white; }
+.overHero .headerPlan { background:transparent; border:1px solid #ffffff80; color:white; border-radius:3px; }
+.navigation > a::after { display:none; }
+.navigation > a:hover { opacity:.7; }
+@media(max-width:1100px) { .headerInner { width:calc(100% - 100px); } .navigation { gap:22px; } }
+@media(max-width:700px) { .headerInner { width:calc(100% - 52px); height:84px; } .headerPlan { display:none; } .navigationOpen { top:83px; } }
+@media(max-width:900px) { .navigationOpen { top:100%; } }
+
+.header { background:#fffefb; backdrop-filter:none; box-shadow:0 3px 18px #17384a08; }
+.overHero { background:transparent; box-shadow:none; }

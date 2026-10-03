@@ -1,85 +1,56 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Volkhov } from "next/font/google";
+import localFont from "next/font/local";
+import "lenis/dist/lenis.css";
 import "./globals.css";
+import { SmoothScroll } from "./components/SmoothScroll";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const archivo = localFont({
+  src: "../public/fonts/archivo.ttf", variable: "--font-sans", weight: "100 900", display: "swap",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const oswald = localFont({
+  src: "../public/fonts/oswald.ttf", variable: "--font-display", weight: "200 700", display: "swap",
 });
-
-const volkhov = Volkhov({
-  variable: "--font-volkhov",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+const handwriting = localFont({
+  src: "../public/fonts/kaushan-script.ttf", variable: "--font-hand", weight: "400", display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.exemplo-agencia-viagens.com"),
-  title: {
-    default: "Agência de Viagens — Explore o mundo com confiança",
-    template: "%s | Agência de Viagens",
-  },
+  metadataBase: new URL("https://agency-travvel.netlify.app"),
+  title: "Travel Agency — O mundo te espera",
   description:
-    "Planeje sua próxima viagem com experiências exclusivas, suporte 24/7 e os melhores destinos.",
-  keywords: [
-    "agência de viagens",
-    "pacotes de viagem",
-    "passagens aéreas",
-    "turismo",
-    "destinos",
+    "Descubra paisagens, culturas e bons caminhos. Explore destinos, guarde suas ideias e comece a imaginar sua próxima viagem com a Travel Agency.",
+  authors: [
+    { name: "Giselly Pereira", url: "https://github.com/GisellyPereira" },
   ],
-  authors: [{ name: "Agência de Viagens" }],
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://www.exemplo-agencia-viagens.com",
-    siteName: "Agência de Viagens",
-    title: "Agência de Viagens — Explore o mundo com confiança",
+    siteName: "Travel Agency",
+    title: "Travel Agency — Vá viver histórias.",
     description:
-      "Planeje sua próxima viagem com experiências exclusivas, suporte 24/7 e os melhores destinos.",
+      "Lugares que despertam a curiosidade. Viagens que ficam com você.",
     images: [
       {
-        url: "/next.svg",
-        width: 1200,
-        height: 630,
-        alt: "Agência de Viagens",
+        url: "/images/travel/hero.webp",
+        width: 2200,
+        height: 1467,
+        alt: "O lago Oeschinen e os Alpes suíços",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agência de Viagens — Explore o mundo com confiança",
-    description:
-      "Planeje sua próxima viagem com experiências exclusivas, suporte 24/7 e os melhores destinos.",
-    images: ["/next.svg"],
+    title: "Travel Agency — O mundo te espera",
+    images: ["/images/travel/hero.webp"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: { icon: "/icon.svg" },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${volkhov.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${archivo.variable} ${oswald.variable} ${handwriting.variable}`}><SmoothScroll>{children}</SmoothScroll></body>
     </html>
   );
 }

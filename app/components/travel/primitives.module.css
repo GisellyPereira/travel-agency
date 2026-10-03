@@ -1,0 +1,34 @@
+.container { width: min(1240px, calc(100% - 112px)); margin-inline: auto; }
+.photo { object-fit: cover; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 22px; min-height: 48px; padding: 13px 22px; border: 1px solid transparent; border-radius: 50px; background: var(--green); color: #fff; font-size: 12px; font-weight: 600; line-height: 1.5; cursor: pointer; transition: background .25s, box-shadow .25s, transform .25s; }
+.button svg { width: 18px; height: 18px; transition: transform .25s; }
+.button:hover { background: var(--green-dark); box-shadow: 0 6px 20px #073b4518; }
+.button:hover svg { transform: translateX(3px); }
+.buttonCoral { background: #b95c6c; color: #073b45; }
+.buttonCoral:hover { background: #f5a153; }
+.buttonOutline { background: transparent; color: var(--green); border-color: #073b4548; }
+.buttonOutline:hover { color: #fff; }
+.buttonSand { background: #e4f5f5; color: #073b45; }
+.buttonSand:hover { background: #cdebea; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--green); line-height: 1; }
+.brand > svg { width: 44px; height: 44px; }
+.wordmark { display: grid; gap: 5px; font-family: var(--font-display),sans-serif; font-size: 27px; font-weight: 650; letter-spacing: -.7px; }
+.wordmark small { font-family: var(--font-sans),sans-serif; font-size: 9px; letter-spacing: 4px; padding-left: 2px; font-weight: 700; }
+.brandDot { color: var(--coral); }
+.sectionHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 34px; }
+.eyebrow { display: flex; align-items: center; gap: 12px; color: #45707a; font-size: 8px; font-weight: 650; letter-spacing: 1.8px; margin-bottom: 15px; text-transform: uppercase; }
+.eyebrow > span { width: 24px; height: 2px; background: var(--coral); }
+.eyebrowLight { color: #fff; }
+.sectionHeading h2 { font-family: var(--font-display),sans-serif; font-size: clamp(40px,4vw,56px); line-height: 1.1; letter-spacing: -1.5px; font-weight: 600; text-transform: uppercase; }
+.sectionHeading h2 em { font-family: inherit; font-weight: inherit; font-style: normal; color: #008995; letter-spacing: inherit; }
+@media(max-width:1180px){ .container { width: calc(100% - 80px); } }
+@media(max-width:900px){ .container { width: calc(100% - 56px); } .brand > svg { width: 38px; height: 38px; } .wordmark { font-size: 24px; } .wordmark small { font-size: 8px; } .sectionHeading h2 { font-size: 44px; } }
+@media(max-width:600px){ .container { width: calc(100% - 40px); } .sectionHeading { flex-direction: column; align-items: flex-start; gap: 17px; margin-bottom: 25px; } .eyebrow { font-size: 7px; letter-spacing: 1.4px; gap: 9px; margin-bottom: 13px; } .eyebrow > span { width: 18px; } .sectionHeading h2 { font-size: 39px; letter-spacing: -1px; } .button { font-size: 11px; } }
+@media(prefers-reduced-motion:reduce){ .button, .button svg { transition: none; } }
+
+.brand svg { color:#17384a; width:43px; height:43px; }
+.wordmark { font-family:Georgia,serif; font-size:27px; font-weight:400; letter-spacing:-1px; line-height:.9; }
+.wordmark small { font-family:var(--font-sans),sans-serif; font-size:9px; font-weight:500; letter-spacing:3px; margin-top:8px; }
+.eyebrow::before,.eyebrow::after { display:none; }
+
+.eyebrow > span { display:none; }

@@ -1,0 +1,66 @@
+.hero { position:relative; isolation:isolate; height:calc(100svh - 16px); min-height:760px; margin:8px; border-radius:22px; overflow:clip; background:#123246; color:#fff; scroll-margin-top:0; touch-action:pan-y; }
+.heroPhoto,.shade { position:absolute; inset:0; z-index:-2; }
+.photo { object-fit:cover; }
+.shade { z-index:-1; background:linear-gradient(90deg,#051e368c 0%,#1028382b 44%,transparent 75%),linear-gradient(180deg,#081f365c,transparent 25%,transparent 80%,#1028384a); }
+.composition { width:calc(100% - 144px); max-width:1500px; margin:auto; height:100%; display:grid; grid-template-columns:38% 62%; gap:4%; align-content:center; align-items:center; padding-top:120px; padding-bottom:100px; position:relative; }
+.heroContent { max-width:430px; text-shadow:0 2px 20px #092c4250; }
+.heroEyebrow { font-size:12px; letter-spacing:2.5px; margin:0 0 20px; }
+.hero h1 { font-family:var(--font-sans),sans-serif; font-size:clamp(64px,6.4vw,98px); font-weight:750; letter-spacing:-3.5px; line-height:1.02; margin:0 0 26px; text-wrap:balance; }
+.heroDescription { font-size:14px; line-height:1.8; max-width:320px; color:#ffffffeb; margin:0 0 32px; }
+.discover { cursor:pointer; font-size:11px; font-weight:600; padding:14px 22px; border:1px solid #ffffffb0; color:white; background:#17384a15; border-radius:2px; backdrop-filter:blur(4px); transition:background .2s; }
+.discover:hover { background:#fff; color:#17384a; }
+.searchLink { display:block; margin-top:21px; background:none; border:0; color:#fff; padding:5px 0; font-size:11px; cursor:pointer; text-decoration:underline; text-underline-offset:6px; }
+.previews { display:flex; gap:22px; align-items:start; width:max-content; }
+.preview { position:relative; width:clamp(240px,22vw,320px); flex:none; border:0; padding:0; cursor:pointer; text-align:left; color:white; background:none; transition:transform .25s; }
+.preview:hover { transform:translateY(-5px); }
+.previewFrame { position:relative; display:block; height:clamp(295px,27vw,410px); overflow:hidden; border-radius:8px; background:#18384b; box-shadow:0 20px 35px #071e2b40; }
+.previewPhoto { object-fit:cover; transition:transform .7s; }
+.preview:hover .previewPhoto { transform:scale(1.04); }
+.previewCaption { display:flex; align-items:baseline; gap:9px; margin-bottom:13px; white-space:nowrap; text-shadow:0 1px 12px #10283890; }
+.previewCaption span { font-size:9px; opacity:.85; }
+.previewCaption strong { font-family:var(--font-sans),sans-serif; font-weight:650; font-size:12px; }
+.controls { position:absolute; bottom:94px; left:42%; display:flex; align-items:center; gap:12px; }
+.controls button { width:44px; height:44px; display:grid; place-items:center; border:1px solid #ffffff85; border-radius:50%; background:#10283815; color:#fff; cursor:pointer; backdrop-filter:blur(6px); transition:background .2s; }
+.controls button:hover { background:#fff; color:#17384a; }
+.controls p { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.hero button:focus-visible { outline:3px solid #fff; outline-offset:5px; }
+.mist { position:absolute; pointer-events:none; z-index:1; height:85px; width:110%; left:-5%; bottom:-55px; background:url('/images/decor/cloud-mist.webp') center bottom/100% 100% no-repeat; opacity:.85; }
+@media(min-width:1700px) { .composition { grid-template-columns:38% 62%; } }
+@media(max-width:1100px) { .composition { width:calc(100% - 100px); grid-template-columns:40% 60%; gap:6%; } .hero h1 { font-size:68px; } .preview { width:225px; } .previewFrame { height:330px; } .controls { left:46%; } }
+@media(max-width:700px) {
+ .hero { height:calc(100svh - 12px); min-height:780px; margin:6px; border-radius:16px; }
+ .shade { background:linear-gradient(90deg,#071e2b65,#1028380a),linear-gradient(180deg,#10283865,transparent 30%,#10283845); }
+ .composition { width:calc(100% - 40px); padding:118px 0 110px; display:flex; flex-direction:column; align-items:stretch; justify-content:center; }
+ .heroContent { max-width:100%; }
+ .heroEyebrow { font-size:10px; margin-bottom:14px; }
+ .hero h1 { font-size:59px; letter-spacing:-2.5px; margin-bottom:16px; }
+ .heroDescription { font-size:12px; line-height:1.7; max-width:290px; margin-bottom:20px; }
+ .discover { font-size:10px; padding:12px 17px; }
+ .searchLink { margin-top:13px; font-size:10px; }
+ .previews { margin-top:32px; gap:14px; }
+ .preview { width:155px; }
+ .previewFrame { height:210px; border-radius:6px; }
+ .previewCaption { gap:6px; margin-bottom:10px; }
+ .previewCaption span { font-size:8px; }
+ .previewCaption strong { font-size:10px; }
+ .controls { bottom:44px; left:0; gap:10px; }
+ .controls button { width:39px; height:39px; }
+ .mist { height:75px; bottom:-50px; width:150%; left:-25%; }
+}
+@media(max-width:380px) { .hero h1 { font-size:51px; } .previewFrame { height:190px; } .composition { padding-top:100px; } }
+@media(prefers-reduced-motion:reduce) { .hero * { transition:none; } }
+
+.hero { height:100svh; margin:0; border-radius:0; min-height:760px; }
+.hero h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(76px,7.3vw,112px); font-weight:400; letter-spacing:-4px; line-height:1.08; }
+.heroEyebrow { font-size:13px; letter-spacing:1.4px; }
+.heroDescription { font-size:15px; line-height:1.75; max-width:350px; }
+.discover { min-height:48px; font-size:13px; font-weight:550; padding:14px 23px; background:#fffefb; color:#17384a; border:0; border-radius:3px; backdrop-filter:none; }
+.discover:hover { background:#dfedf0; }
+.searchLink { font-size:12px; text-decoration:none; opacity:.9; }
+.searchLink:hover { opacity:1; text-decoration:underline; }
+.previewCaption strong { font-size:14px; font-weight:500; }
+.previewCaption span { font-size:10px; }
+.controls button { background:#10283845; }
+@media(max-width:1100px) { .hero h1 { font-size:80px; } }
+@media(max-width:700px) { .hero { height:100svh; min-height:820px; margin:0; border-radius:0; } .composition { padding-top:108px; } .hero h1 { font-size:67px; letter-spacing:-2px; } .heroDescription { font-size:13px; max-width:295px; } .heroEyebrow { font-size:11px; } .discover { font-size:12px; min-height:44px; } .searchLink { font-size:11px; } .previewCaption strong { font-size:11px; } .previewCaption span { font-size:9px; } }
+@media(max-width:380px) { .hero h1 { font-size:58px; } }

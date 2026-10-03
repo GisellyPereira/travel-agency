@@ -1,0 +1,586 @@
+.container {
+  composes: container from "./primitives.module.css";
+}
+.photo {
+  composes: photo from "./primitives.module.css";
+}
+.button {
+  composes: button from "./primitives.module.css";
+}
+.buttonCoral {
+  composes: buttonCoral from "./primitives.module.css";
+}
+.buttonOutline {
+  composes: buttonOutline from "./primitives.module.css";
+}
+.buttonSand {
+  composes: buttonSand from "./primitives.module.css";
+}
+.eyebrow {
+  composes: eyebrow from "./primitives.module.css";
+}
+.eyebrowLight {
+  composes: eyebrowLight from "./primitives.module.css";
+}
+.sectionHeading {
+  composes: sectionHeading from "./primitives.module.css";
+}
+.brand {
+  composes: brand from "./primitives.module.css";
+}
+.brandDot {
+  composes: brandDot from "./primitives.module.css";
+}
+.skipLink {
+  position: fixed;
+  z-index: 150;
+  top: -80px;
+  left: 20px;
+  background: var(--green);
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+.skipLink:focus {
+  top: 10px;
+}
+.searchWrapper {
+  width: min(1060px, calc(100% - 180px));
+  position: relative;
+  z-index: 3;
+  margin: -43px auto 0;
+}
+.searchBar {
+  display: grid;
+  grid-template-columns: 1.4fr 1.1fr 1fr auto;
+  gap: 0;
+  align-items: center;
+  border: 1px solid #d5e5e6;
+  border-radius: 50px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 12px 35px #073b4510;
+}
+.searchField {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-inline: 18px;
+  border-right: 1px solid var(--line);
+}
+.searchField:nth-child(3) {
+  border: 0;
+}
+.searchField > svg:first-child {
+  width: 20px;
+  flex-shrink: 0;
+  color: var(--green);
+}
+.searchField > svg:last-child {
+  width: 12px;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.searchField > span {
+  flex: 1;
+  min-width: 0;
+}
+.searchField small {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 7px;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.searchField select,
+.searchField input {
+  width: 100%;
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--green);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+.searchField input { cursor: text; }
+.searchField input::placeholder { color: #6d8589; opacity: 1; }
+.searchField input:focus-visible,
+.searchField select:focus-visible { outline: 2px solid #008995; outline-offset: 5px; border-radius: 2px; }
+.searchButton {
+  border: 0;
+  border-radius: 40px;
+  background: var(--green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 17px 23px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+.searchButton svg {
+  width: 18px;
+  height: 18px;
+}
+.searchButton:hover {
+  background: var(--green-dark);
+}
+.principles {
+  padding: 35px 30px 37px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  border-bottom: 1px solid var(--line);
+}
+.principles > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.principles svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: #00a0ad;
+}
+.principles strong,
+.principles small {
+  display: block;
+}
+.principles strong {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+.principles small {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 3px;
+}
+.destinations {
+  padding: 76px 0 80px;
+  scroll-margin-top: 84px;
+}
+.headingAside {
+  padding-bottom: 5px;
+}
+.headingAside p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+.headingAside > span {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-top: 18px;
+}
+.headingAside svg {
+  width: 30px;
+  height: 17px;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 27px;
+}
+.filters > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 39px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 10px 16px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 10px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+.filters > button svg {
+  width: 15px;
+  height: 15px;
+}
+.filters > button:hover {
+  border-color: #073b4566;
+  color: var(--green);
+}
+.filters > .filterActive {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.filters > .filterActive:hover {
+  color: #fff;
+  background: var(--green-dark);
+}
+.savedFilter {
+  margin-left: auto;
+}
+.savedFilter > span {
+  font-size: 9px;
+}
+.destinationGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.moreDestinations {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 28px;
+}
+.moreDestinations > span {
+  color: var(--muted);
+  font-size: 10px;
+}
+.moreDestinations > button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 8px 0;
+  background: none;
+  border: 0;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.moreDestinations svg {
+  width: 18px;
+}
+.resultsNote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.resultsNote > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: none;
+  color: var(--green);
+  padding: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.resultsNote svg {
+  width: 12px;
+  height: 12px;
+}
+.emptyState {
+  text-align: center;
+  padding: 55px 20px;
+  border: 1px dashed #73857566;
+  border-radius: 12px;
+}
+.emptyState > svg {
+  color: var(--coral);
+  width: 36px;
+  height: 36px;
+}
+.emptyState h3 {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+.emptyState p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 15px auto 22px;
+  max-width: 400px;
+  line-height: 1.8;
+}
+@media (max-width: 1180px) {
+  .searchWrapper {
+    width: calc(100% - 130px);
+  }
+  .searchBar {
+    padding: 16px 12px;
+  }
+  .searchField {
+    padding-inline: 12px;
+    gap: 9px;
+  }
+  .searchField select {
+    font-size: 10px;
+  }
+  .searchButton {
+    padding-inline: 18px;
+    gap: 10px;
+  }
+  .principles {
+    gap: 20px;
+    padding-inline: 0;
+  }
+  .destinationGrid {
+    gap: 16px;
+  }
+}
+@media (max-width: 900px) {
+  .searchWrapper {
+    width: calc(100% - 84px);
+    margin-top: -33px;
+  }
+  .searchBar {
+    grid-template-columns: 1fr 1fr;
+    padding: 14px;
+    gap: 20px 0;
+  }
+  .searchField {
+    padding: 3px 13px;
+  }
+  .searchField:nth-child(2) {
+    border-right: 0;
+  }
+  .searchButton {
+    margin-inline: 12px;
+    justify-content: center;
+    padding: 13px;
+  }
+  .principles {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    padding: 31px 0;
+  }
+  .principles > div {
+    flex-direction: column;
+    gap: 9px;
+    text-align: center;
+    justify-content: flex-start;
+  }
+  .principles strong {
+    font-size: 10px;
+  }
+  .principles small {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .destinations {
+    padding: 70px 0;
+    scroll-margin-top: 96px;
+  }
+  .headingAside p {
+    font-size: 11px;
+  }
+  .headingAside > span {
+    font-size: 6px;
+    gap: 8px;
+  }
+  .destinationGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .filters {
+    gap: 8px;
+  }
+  .filters > button {
+    padding-inline: 12px;
+    font-size: 9px;
+  }
+}
+@media (max-width: 600px) {
+  .searchWrapper {
+    width: calc(100% - 52px);
+    margin-top: -24px;
+  }
+  .searchBar {
+    padding: 14px;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-radius: 12px;
+  }
+  .searchField {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 3px;
+    gap: 13px;
+  }
+  .searchField:nth-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+  .searchField:nth-child(3) {
+    padding-bottom: 15px;
+  }
+  .searchField small {
+    font-size: 6px;
+    letter-spacing: 1.1px;
+    margin-bottom: 5px;
+  }
+  .searchField select {
+    font-size: 11px;
+  }
+  .searchField > svg:last-child {
+    width: 14px;
+  }
+  .searchButton {
+    margin: 3px 0 0;
+    padding: 13px;
+  }
+  .principles {
+    grid-template-columns: 1fr;
+    padding: 26px 18px 30px;
+    gap: 21px;
+  }
+  .principles > div {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+  .principles svg {
+    width: 25px;
+    height: 25px;
+  }
+  .principles strong {
+    font-size: 11px;
+  }
+  .principles small {
+    font-size: 10px;
+  }
+  .destinations {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    scroll-margin-top: 70px;
+  }
+  .headingAside p {
+    font-size: 11px;
+  }
+  .headingAside p br {
+    display: none;
+  }
+  .headingAside > span {
+    display: none;
+  }
+  .filters {
+    gap: 7px;
+    margin-bottom: 20px;
+  }
+  .filters > button {
+    min-height: 34px;
+    padding: 8px 11px;
+    font-size: 8px;
+  }
+  .filters > button svg {
+    width: 13px;
+    height: 13px;
+  }
+  .savedFilter {
+    margin-left: 0;
+  }
+  .destinationGrid {
+    gap: 13px;
+  }
+  .moreDestinations {
+    gap: 10px;
+    padding-top: 21px;
+    align-items: flex-end;
+  }
+  .moreDestinations > span {
+    max-width: 115px;
+    font-size: 8px;
+    line-height: 1.7;
+  }
+  .moreDestinations > button {
+    font-size: 9px;
+    gap: 8px;
+  }
+  .moreDestinations svg {
+    width: 15px;
+  }
+}
+@media (max-width: 359px) {
+  .destinationGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Postcards: photography above a real white caption, without a tinted overlay. */
+.destinationGrid { gap: 27px; padding: 12px 5px 20px; }
+.destinationCard { position: relative; aspect-ratio: auto; border-radius: 0; padding: 9px; background: #fff; box-shadow: 0 3px 5px #073b4510, 0 12px 28px #073b4514; transition: box-shadow .3s; }
+.destinationCard:nth-child(4n + 1) { rotate: -2deg; }
+.destinationCard:nth-child(4n + 2) { rotate: 1.5deg; translate: 0 12px; }
+.destinationCard:nth-child(4n + 3) { rotate: -1deg; }
+.destinationCard:nth-child(4n + 4) { rotate: 2deg; translate: 0 9px; }
+.destinationCard:hover { box-shadow: 0 5px 8px #073b4510, 0 16px 35px #073b4526; z-index: 2; }
+.destinationOpen { position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; border: 0; border-radius: 0; padding: 0; background: #fff; color: var(--green); text-align: left; cursor: pointer; overflow: visible; }
+.cardImage { position: relative; display: block; width: 100%; aspect-ratio: .91; overflow: hidden; }
+.destinationOpen .photo { transition: transform .8s cubic-bezier(.22,1,.36,1); }
+.destinationOpen:hover .photo { transform: scale(1.06); }
+.cardTop { position: absolute; top: auto; right: auto; left: 12px; bottom: 12px; color: #fff; font-size: 8px; letter-spacing: .25px; padding: 6px 8px; background: #073b45c9; border-radius: 2px; }
+.cardCopy { position: relative; display: grid; left: auto; right: auto; bottom: auto; width: 100%; padding: 15px 34px 15px 7px; min-height: 112px; }
+.cardCopy small { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; color: #53717a; opacity: 1; }
+.cardCopy strong { font-family: var(--font-display),sans-serif; text-transform: uppercase; font-size: 28px; font-weight: 500; line-height: 1.16; margin-top: 5px; letter-spacing: -.5px; }
+.cardCopy > span { font-size: 10px; color: #516971; opacity: 1; line-height: 1.5; margin-top: 6px; min-height: 0; max-width: none; }
+.cardArrow { position: absolute; bottom: 19px; right: 3px; width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid #073b4530; border-radius: 50%; color: #007a89; background: transparent; }
+.cardArrow svg { width: 14px; height: 14px; transform: rotate(-40deg); transition: transform .3s; }
+.destinationOpen:hover .cardArrow svg { transform: translate(2px,-2px) rotate(-40deg); }
+.favoriteButton { position: absolute; top: 21px; right: 21px; bottom: auto; display: grid; place-items: center; width: 34px; height: 34px; padding: 8px; border-radius: 50%; border: 0; background: #fffefbf0; color: #073b45; cursor: pointer; box-shadow: 0 3px 8px #073b4515; }
+.favoriteButton svg { width: 17px; height: 17px; transition: transform .25s; }
+.favoriteButton:hover svg { transform: scale(1.12); }
+.favoriteActive { color: #b75213; }
+.favoriteActive svg { fill: #b95c6c; }
+.principles svg { color: #008995; }
+@media(max-width:1000px) { .destinationGrid { gap: 28px; } .cardImage { aspect-ratio: 1.1; } .cardCopy { min-height: 118px; } .cardCopy strong { font-size: 30px; } }
+@media(max-width:700px) { .searchWrapper { margin-top: -18px; width: calc(100% - 40px); } .searchBar { border-radius: 15px; } .searchField select { font-size: 12px; } }
+@media(max-width:600px) { .principles { padding: 28px 0; gap: 20px; } .principles strong { font-size: 12px; } .principles small { font-size: 11px; } .destinations { padding-top: 44px; } .destinationGrid { gap: 23px 16px; padding: 8px 2px 15px; } .destinationCard { padding: 6px; aspect-ratio: auto; } .destinationCard:nth-child(4n + 2), .destinationCard:nth-child(4n + 4) { translate: 0 8px; } .cardImage { aspect-ratio: .86; } .cardTop { top: auto; right: auto; left: 7px; bottom: 8px; font-size: 6px; padding: 4px 6px; } .cardCopy { left: auto; right: auto; bottom: auto; padding: 11px 19px 12px 4px; min-height: 106px; } .cardCopy strong { font-size: 23px; letter-spacing: -.3px; } .cardCopy small { font-size: 6px; letter-spacing: 1px; } .cardCopy > span { font-size: 9px; min-height: 0; max-width: none; } .cardArrow { right: 0; bottom: 11px; width: 22px; height: 22px; } .cardArrow svg { width: 12px; } .favoriteButton { top: 14px; right: 14px; bottom: auto; width: 29px; height: 29px; padding: 7px; } .favoriteButton svg { width: 15px; height: 15px; } .filters > button { font-size: 10px; } .headingAside p { font-size: 12px; } }
+@media(max-width:359px){ .destinationGrid { grid-template-columns: 1fr; padding-inline: 12px; } .cardImage { aspect-ratio: 1.2; } .cardCopy { min-height: 110px; padding: 15px 32px 15px 7px; } .cardCopy strong { font-size: 30px; } .cardCopy > span { font-size: 11px; } .cardCopy small { font-size: 8px; } .favoriteButton { width: 34px; height: 34px; } }
+@media(prefers-reduced-motion:reduce){ .destinationOpen .photo,.cardArrow svg,.favoriteButton svg { transition:none; } }
+
+@media(max-width:900px) and (min-width:601px){ .destinations { scroll-margin-top:76px; } }
+
+@media(max-width:600px) { .searchField input { font-size:16px; } }
+
+/* The search is part of the first screen and reads as an editable form. */
+.searchWrapper { width:min(1140px,calc(100% - 72px)); margin:-84px auto 0; z-index:4; padding:22px 26px 24px; background:#fffefb; border-radius:8px; box-shadow:0 16px 45px #16384b1c; scroll-margin-top:100px; }
+.searchIntro { font-size:17px; font-weight:600; margin-bottom:15px; color:#17384a; }
+.searchBar { grid-template-columns:1.6fr 1fr auto; gap:16px; border:0; box-shadow:none; border-radius:0; padding:0; }
+.searchField { min-height:58px; padding:10px 16px; border:1px solid #bfd1d4; border-radius:5px; gap:12px; }
+.searchField small { font-size:10px; letter-spacing:0; font-weight:400; margin-bottom:5px; }
+.searchField input,.searchField select { font-size:14px; font-weight:450; }
+.searchButton { min-height:58px; border-radius:5px; padding:16px 25px; font-size:14px; background:#17384a; }
+.destinations { padding-top:54px; }
+@media(max-width:700px){ .searchWrapper { width:calc(100% - 32px); margin:-17px auto 0; padding:20px 18px; } .searchBar { grid-template-columns:1fr; gap:10px; } .searchIntro { font-size:16px; } .searchField { min-height:60px; border:1px solid #bfd1d4; padding:10px 13px; } .searchField input,.searchField select { font-size:16px; } .searchButton { justify-content:center; min-height:48px; } .destinations { padding-top:35px; } }
+
+.searchWrapper { margin-top:-62px; box-shadow:0 14px 28px #17384a10; border-radius:4px; background:#fffefb; padding:19px 25px 22px; }
+.searchIntro { font-family:Georgia,serif; font-size:20px; font-weight:400; }
+@media(max-width:700px){ .searchWrapper { margin-top:-22px; padding:18px; } }
+
+.searchWrapper { margin:32px auto 0; box-shadow:none; border-radius:0; padding:24px 0 28px; border-bottom:1px solid #17384a14; }
+@media(max-width:700px) { .searchWrapper { margin:22px auto 0; width:calc(100% - 44px); padding:16px 0 24px; } }
+
+.searchIntro { font-family:var(--font-sans),sans-serif; font-size:24px; font-weight:500; letter-spacing:-.5px; margin-bottom:22px; }
+.searchField { border-color:#d2dddf; min-height:72px; background:#fff; border-radius:5px; }
+.searchField:focus-within { border-color:#426879; box-shadow:0 0 0 2px #17384a0b; }
+.searchField > span { width:100%; min-width:0; }
+.searchField small { color:#60747e; font-size:11px; margin-bottom:6px; }
+.searchField input { font-size:15px; }
+.searchButton { min-height:72px; }
+@media(max-width:700px) { .searchIntro { font-size:21px; } .searchField { min-height:70px; } .searchField input { font-size:16px; } .searchButton { min-height:50px; } }
+
+.searchWrapper { border-bottom:0; }

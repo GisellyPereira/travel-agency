@@ -1,0 +1,15 @@
+.select { position:relative; width:100%; min-width:0; color:#17384a; }
+.trigger { display:flex; width:100%; align-items:center; justify-content:space-between; gap:15px; border:0; background:none; color:inherit; padding:0; font-size:14px; line-height:1.5; text-align:left; cursor:pointer; min-height:30px; }
+.trigger > span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.trigger svg { flex:none; transition:transform .2s; }
+.trigger[aria-expanded="true"] svg { transform:rotate(180deg); }
+.compact { width:210px; }
+.compact .trigger { padding:11px 14px; border:1px solid #d2dddf; border-radius:5px; background:#fffefb; min-height:44px; font-size:13px; }
+.options { position:absolute; z-index:25; top:calc(100% + 16px); left:-14px; width:calc(100% + 28px); min-width:220px; max-height:310px; overflow:auto; padding:7px; background:#fffefb; color:#17384a; border:1px solid #dce4e5; border-radius:7px; box-shadow:0 16px 40px #17384a1e; }
+.compact .options { left:0; width:100%; top:calc(100% + 8px); }
+.options button { display:flex; width:100%; justify-content:space-between; gap:14px; align-items:center; min-height:44px; padding:11px 12px; color:inherit; text-align:left; font-size:13px; line-height:1.4; background:none; border:0; border-radius:3px; cursor:pointer; }
+.options button:hover,.options button:focus-visible { background:#edf3f4; outline:none; }
+.options button[aria-selected="true"] { background:#e5eff1; font-weight:550; }
+.options button svg { flex:none; }
+@media(max-width:700px) { .trigger { font-size:16px; } .compact { width:100%; } .compact .trigger { font-size:14px; } .options { max-height:260px; } }
+@media(prefers-reduced-motion:reduce) { .trigger svg { transition:none; } }
