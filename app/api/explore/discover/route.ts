@@ -43,5 +43,5 @@ export async function GET(request: Request) {
   const region = new URL(request.url).searchParams.get("region") ?? "mundo";
   if (!Object.hasOwn(regions, region)) return Response.json({ status: "unavailable", message: "Escolha uma região válida." }, { status: 400 });
   const places = await discover(region);
-  return Response.json(places.length ? { status: "ready", data: { query: region, kind: "city", places, source: "geonames" } } : { status: "unavailable", message: "Os destinos não puderam ser carregados. Tente novamente." }, { headers: { "Cache-Control": places.length ? "public, max-age=300" : "no-store" } });
+  return Response.json(places.length ? { status: "ready", data: { query: region, kind: "city", places, source: "geonames" } } : { status: "unavailable", message: "Os destinos não puderam ser carregados. Tente novamente." }, { headers: { "Netlify-Vary": "query", "Cache-Control": places.length ? "public, max-age=300" : "no-store" } });
 }

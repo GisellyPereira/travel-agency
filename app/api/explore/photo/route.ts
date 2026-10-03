@@ -6,5 +6,5 @@ export async function GET(request: Request) {
   const location = { name: params.get("name") ?? "", country: params.get("country") ?? "", latitude: latitude?.trim() ? Number(latitude) : NaN, longitude: longitude?.trim() ? Number(longitude) : NaN, kind: params.get("kind") ?? "place" };
   if (!validatePhotoLocation(location)) return Response.json({ status: "unavailable", message: "Informe um lugar e coordenadas válidas." }, { status: 400 });
   const result = await getExplorerPhoto(location);
-  return Response.json(result, { headers: { "Cache-Control": result.status === "ready" ? "public, max-age=300, s-maxage=86400" : "no-store" } });
+  return Response.json(result, { headers: { "Netlify-Vary": "query", "Cache-Control": result.status === "ready" ? "public, max-age=300, s-maxage=86400" : "no-store" } });
 }
